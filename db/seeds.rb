@@ -5,7 +5,8 @@ User.delete_all
 users = []
 users << User.create(
   email: "test@1.com",
-  password: "abc123"
+  password: "abc123",
+  admin: true
 )
 users << User.create(
   email: "test@2.com",

@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :student
+
+  def has_student?
+    student.present? && !student.id.nil?
+  end
 end
