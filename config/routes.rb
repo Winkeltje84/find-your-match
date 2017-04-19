@@ -5,4 +5,7 @@ Rails.application.routes.draw do
 
   resources :students, only: [:new, :edit, :create, :update]
 
+  namespace :admin do
+      resources :users
+  end
 end
