@@ -1,0 +1,2 @@
+class MatchedStudent < ApplicationRecord
+end
