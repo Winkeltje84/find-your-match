@@ -7,7 +7,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def show
-    user = User.find(params[:id])
+    render_user
   end
 
   def update
@@ -15,7 +15,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    render_user
   end
 
 
@@ -26,7 +26,7 @@ private
   end
 
   def switch_admin_student
-    @user = User.find(params[:id])
+    render_user
 
     if (@user.admin === true)
       @user.update_attributes(admin: false)
@@ -34,6 +34,10 @@ private
       @user.update_attributes(admin: true)
     end
     redirect_to admin_users_path
+  end
+
+  def render_user
+    @user = User.find(params[:id])
   end
 
 end
