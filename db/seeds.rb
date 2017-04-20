@@ -41,19 +41,23 @@ user6 = User.create(
 #   check whether it has already been paired to them)
 student1 = Student.create(
   name: "nameTest1",
-  user_id: user1.id
+  user_id: user1.id,
+  matches: [user2.id, user3.id]
 )
 student2 = Student.create(
   name: "nameTest2",
-  user_id: user2.id
+  user_id: user2.id,
+  matches: [user1.id, user4.id]
 )
 student3 = Student.create(
   name: "nameTest3",
-  user_id: user3.id
+  user_id: user3.id,
+  matches: [user1.id, user4.id]
 )
 student4 = Student.create(
   name: "nameTest4",
-  user_id: user4.id
+  user_id: user4.id,
+  matches: [user2.id, user3.id]
 )
 
 # matched students
