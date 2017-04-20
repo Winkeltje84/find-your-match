@@ -1,3 +1,5 @@
 <h1>Where the days and pairs come...</h1>
 
+<%= link_to admin_day_matches_path, method: :new , class: "button" do %>Create Matches for Today<% end %>
+
 <%= render partial: "day_matches_table", locals: { day_matches: @day_matches } %>
