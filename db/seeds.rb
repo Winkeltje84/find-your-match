@@ -73,23 +73,48 @@ matched_student4 = MatchedStudent.create(
 # 1: the day of the matches,
 # 2: the student_id (which will be used by Student to show its days & matches)
 # 3: the matched_student_id (only used by student to see its match)
+# This seed is double (so the SWITCHED), since each student will have to be able to call its matches
+# by using its student_id!
 day1_match1 = DayMatch.create(
   day: 2.day.ago,
   student_id: student1.id,
   matched_student_id: student2.id
 )
+day1_match1_switched = DayMatch.create(
+  day: 2.day.ago,
+  student_id: student2.id,
+  matched_student_id: student1.id
+)
+
 day1_match2 = DayMatch.create(
   day: 2.day.ago,
   student_id: student3.id,
   matched_student_id: student4.id
 )
-day1_match1 = DayMatch.create(
+day1_match2_switched = DayMatch.create(
+  day: 2.day.ago,
+  student_id: student4.id,
+  matched_student_id: student3.id
+)
+
+day2_match1 = DayMatch.create(
   day: 1.day.ago,
   student_id: student1.id,
   matched_student_id: student3.id
 )
-day1_match1 = DayMatch.create(
+day2_match1_switched = DayMatch.create(
+  day: 1.day.ago,
+  student_id: student3.id,
+  matched_student_id: student1.id
+)
+
+day2_match2 = DayMatch.create(
   day: 1.day.ago,
   student_id: student2.id,
   matched_student_id: student4.id
+)
+day2_match2_switched = DayMatch.create(
+  day: 1.day.ago,
+  student_id: student4.id,
+  matched_student_id: student2.id
 )
