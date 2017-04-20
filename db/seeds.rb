@@ -36,21 +36,24 @@ user6 = User.create(
 # students
 # Creates students that are linked to users. Except for user 5 & 6 that.
 # ToDo: User 5 and 6 should be lateron added to student model.
+# ToDo: Determine wether to use the Matches array (to show all previous
+#   matches and so it can be compared to all current students. So it can
+#   check whether it has already been paired to them)
 student1 = Student.create(
   name: "nameTest1",
-  user_id: user1
+  user_id: user1.id
 )
 student2 = Student.create(
   name: "nameTest2",
-  user_id: user2
+  user_id: user2.id
 )
 student3 = Student.create(
   name: "nameTest3",
-  user_id: user3
+  user_id: user3.id
 )
 student4 = Student.create(
   name: "nameTest4",
-  user_id: user4
+  user_id: user4.id
 )
 
 # matched students
