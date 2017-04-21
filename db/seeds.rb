@@ -29,8 +29,7 @@ user5 = User.create(
 )
 user6 = User.create(
   email: "test@6.com",
-  password: "abc123",
-  admin: true
+  password: "abc123"
 )
 
 # students
