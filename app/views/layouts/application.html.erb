@@ -9,11 +9,16 @@
   </head>
 
   <body>
-
     <div>
       <%= render 'shared/navbar' %>
     </div>
 
+    <div class="container">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, class: "alert alert-info" %>
+      <% end %>
+    </div>
+    
     <div>
       <%= yield %>
     </div>

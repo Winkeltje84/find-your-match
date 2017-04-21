@@ -23,7 +23,7 @@ class Admin::UsersController < ApplicationController
 private
 
   def user_is_admin?
-    redirect_to :root unless current_user && current_user.admin?
+    redirect_to :root, notice: "Pretty sure you're no admin..." unless current_user && current_user.admin?
   end
 
   def switch_admin_student
@@ -34,7 +34,7 @@ private
     else
       @user.update_attributes(admin: true)
     end
-    redirect_to admin_users_path
+    redirect_to admin_users_path, notice: "Changed the admin status"
   end
 
   def render_user
