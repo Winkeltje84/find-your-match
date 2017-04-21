@@ -10,19 +10,11 @@ class Admin::DayMatchesController < ApplicationController
 
   def create
     # called from view to create a new set of day_matches
-    #
-    # current_day = Date.today
     create_day_matches
+    debugger
+    redirect_to admin_day_matches_path
+    # IT BREAKS HERE
   end
-
-  # def create_day_matches
-  #
-  # end
-
-  def new
-    # called for every new day_matches line
-  end
-
 
   private
 
@@ -44,13 +36,9 @@ class Admin::DayMatchesController < ApplicationController
       student_count -= 2 #decrement by two since two have been added to matches_array
     end
 
-
-    create_two_day_matches_per_match(matches_array) #
-
-    debugger
-    match_array = [] #create an array where all matches will be saved (array of arrays)
-    # pick_random_match(student_id_array)
-
+    create_two_day_matches_per_match(matches_array)
+    student_count = Student.count
+    add_matched_student_to_student_matches_array(matches_array, student_count)
   end
 
   def create_single_match(student_id_array, matches_array)
@@ -64,6 +52,7 @@ class Admin::DayMatchesController < ApplicationController
     first_student_in_match = pick_random_student(left_over_students)
     left_over_students.delete(first_student_in_match) # deletes first student of match from the student_id_array and puts that in a left_over_students array
     student_earlier_matches = Student.find(first_student_in_match).matches
+
     student_earlier_matches.each do |match| # deletes all previous matches from student_id_array
       match = match.to_i
       left_over_students.delete(match)
@@ -78,7 +67,7 @@ class Admin::DayMatchesController < ApplicationController
   end
 
   def create_two_day_matches_per_match(matches_array)
-
+    # creates matches in two directions for each match
     matches_array.each do |match|
       match_one_way = DayMatch.create(
         day: Date.today,
@@ -90,9 +79,22 @@ class Admin::DayMatchesController < ApplicationController
         student_id: match[1],
         matched_student_id: match[0]
       )
-      debugger
-      # UP TO HERE - UNIQUE MATCHES ARE STORED IN DATABASE
-
     end
+  end
+
+  def add_matched_student_to_student_matches_array(matches_array, student_count)
+    debugger
+    if matches_array.count >= (student_count / 2) #matches array should not be updated if they array consists all other students already
+      debugger
+      matches_array.each do |match|
+        first_student = Student.find(match[0])
+        first_student.matches << match[1]
+        first_student.save
+        second_student = Student.find(match[1])
+        second_student.matches << match[0]
+        second_student.save
+      end
+    end
+
   end
 end
