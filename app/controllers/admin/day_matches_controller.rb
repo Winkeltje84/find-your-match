@@ -11,7 +11,6 @@ class Admin::DayMatchesController < ApplicationController
   def create
     # called from view to create a new set of day_matches
     create_day_matches
-    debugger
     redirect_to admin_day_matches_path
     # IT BREAKS HERE
   end
@@ -83,9 +82,7 @@ class Admin::DayMatchesController < ApplicationController
   end
 
   def add_matched_student_to_student_matches_array(matches_array, student_count)
-    debugger
     if matches_array.count >= (student_count / 2) #matches array should not be updated if they array consists all other students already
-      debugger
       matches_array.each do |match|
         first_student = Student.find(match[0])
         first_student.matches << match[1]

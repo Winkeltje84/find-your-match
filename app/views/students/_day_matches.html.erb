@@ -1,0 +1,20 @@
+<h2>Your Day Matches:</h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Day</th>
+      <th>Your ID</th>
+      <th>Matched Student ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% day_match_array.each do |day_match| %>
+      <tr>
+        <td><%= day_match.day %></td>
+        <td><%= day_match.student_id %></td>
+        <td><%= day_match.matched_student_id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
