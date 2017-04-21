@@ -59,7 +59,13 @@ class Admin::DayMatchesController < ApplicationController
   def create_single_match(student_id_array)
     debugger
     left_over_students = student_id_array.map { |id| id }
-    #UP TO HERE NOW, THE student_id_array WILL NOT BE CHANGED
+    if (matches_array != []) { # if no previous matches have been made this can be skipped
+      matches_array.each { |match|
+        left_over_students.delete(match[0])
+        left_over_students.delete(match[1])
+      }    #takes out the previous match of this day
+    }
+    #UP TO HERE NOW, THE student_id_array WILL NOT BE changed
     first_student_in_match = pick_random_student(left_over_students)
     left_over_students.delete(first_student_in_match) # deletes first student of match from the student_id_array and puts that in a left_over_students array
     student_earlier_matches = Student.find(first_student_in_match).matches
