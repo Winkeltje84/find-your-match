@@ -18,7 +18,7 @@ class Admin::DayMatchesController < ApplicationController
   private
 
   def user_is_admin?
-    redirect_to :root unless current_user && current_user.admin?
+    redirect_to :root, notice: "Pretty sure you're no admin..." unless current_user && current_user.admin?
   end
 
   def create_day_matches
