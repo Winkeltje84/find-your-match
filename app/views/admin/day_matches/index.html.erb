@@ -1,8 +1,6 @@
-<div class="container">
-  <h1>Day Matches</h1>
+<h1>Day Matches</h1>
 
-  <%= link_to admin_day_matches_path, method: :create , class: "button" do %>Create Matches for Today<% end %>
+<%= link_to admin_day_matches_path, method: :create , class: "button" do %>Create Matches for Today<% end %>
 
-  <%= render partial: "day_matches_table", locals: { day_matches: @day_matches } %>
-  <%= link_to "Back", root_path, class: "btn btn-default" %>
-</div>
+<%= render partial: "day_matches_table", locals: { day_matches: @day_matches } %>
+<%= link_to "Back", root_path, class: "btn btn-default" %>
