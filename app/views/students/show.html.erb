@@ -1,7 +1,5 @@
-<div class="container">
-  <h1>Hello <%= @student.name %></h1>
+<h1>Hello <%= @student.name %></h1>
 
-  <%= render partial: "day_matches", locals: { day_match_array: @day_match_array } %>
+<%= render partial: "day_matches", locals: { day_match_array: @day_match_array } %>
 
-  <%= link_to "Back", root_path, class: "btn btn-default" %>
-</div>
+<%= link_to "Back", root_path, class: "btn btn-default" %>
