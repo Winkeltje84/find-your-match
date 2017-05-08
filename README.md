@@ -1,7 +1,16 @@
+# Find Your Match
+> Final individual assignment week #7 of Codaisseur Academy
+
+## About
+This assignment was set up to let the students help Codaisseur create a web application that gives teachers the ability to create daily matches of students. 
 
 
 
-# EXAMPLE TNC BELOWGIT 
+
+
+
+
+# EXAMPLE TNC BELOWGIT
 
 
 # The Next Closet - Bidding feature
