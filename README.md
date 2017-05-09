@@ -34,11 +34,20 @@ Bonus Stories
 Pairs/couples are calculated randomly, but a Student is not matched with the same person twice until he/she has been matched with all the registered Students until that moment.
 
 ## ScreenShots
+- Root view (logged out)
+[![](https://github.com/Winkeltje84/find-your-match/blob/Readme/app/assets/images/screenshots/screen_shot_home.png?raw=true)](/assets/images/screenshots/screen_shot_home.png?raw=true)
 
-- GENERAL OVERVIEW
-- SOME ADMIN SHOWS
-- SOME STUDENT SHOWS
-- ETC...
+- Admin: show users - admin can change admin status
+[![](https://github.com/Winkeltje84/find-your-match/blob/Readme/app/assets/images/screenshots/screen_show_users.png?raw=true)](/assets/images/screenshots/screen_show_users.png?raw-true)
+
+- Admin: show students and their previous matches
+[![](https://github.com/Winkeltje84/find-your-match/blob/Readme/app/assets/images/screenshots/screen_shot_student_and_matches.png?raw-true)](/assets/images/screenshots/screen_shot_student_and_matches.png?raw-true)
+
+- Admin: overview of all daily matches (still a 'two-way' relation)
+[![](https://github.com/Winkeltje84/find-your-match/blob/Readme/app/assets/images/screenshots/screen_shot_daily_matches.png?raw-true)](/assets/images/screenshots/screen_shot_daily_matches.png?raw-true)
+
+- Student: shows per day which student you have been matched with
+[![](https://github.com/Winkeltje84/find-your-match/blob/Readme/app/assets/images/screenshots/screen_shot_your_matches.png?raw-true)](/assets/images/screenshots/screen_shot_your_matches.png?raw-true)
 
 ## Running Locally
 Make sure you have [Ruby](https://www.ruby-lang.org/en/) and [Bundler](http://bundler.io/) installed.
