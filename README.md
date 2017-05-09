@@ -4,6 +4,10 @@
 ## About
 This assignment was the final individual assignment for batch #7 of the Codaisseur Academy. Its aim is to build an application that could help Codaisseur’s students and teachers to make new teams of 2 students every day.
 
+## Current state
+At this moment of writing this repository is still under construction and far from a finished state. Main focus will be to improve on Testing and refactor to create fat models & skinny controllers.
+
+
 ## User Stories
 Admins (Teachers & Staff)
 ● As an Admin, I need to sign in before having access to any page in the application.
