@@ -13,12 +13,10 @@ class Student < ApplicationRecord
         day_match_array.push(match)
       end
     end
-    debugger
     return day_match_array
   end
 
   def self.get_matched_student_name(matched_student_id)
-    debugger
     matched_student_name = Student.select{ |student| student.id == matched_student_id}[0].name
     return matched_student_name
   end
