@@ -7,7 +7,7 @@ class StudentsController < ApplicationController
   end
 
   def show
-    @day_match_array = get_current_user_matches
+    @day_match_array = Student.get_current_user_matches(@student)
   end
 
   def create
@@ -38,16 +38,5 @@ class StudentsController < ApplicationController
 
     def student_params
       params.require(:student).permit(:name)
-    end
-
-    def get_current_user_matches
-      day_match_array = []
-      day_matches = DayMatch.all
-      day_matches.each do |match|
-        if match.student_id === @student.id
-          day_match_array.push(match)
-        end
-      end
-      return day_match_array
     end
 end
